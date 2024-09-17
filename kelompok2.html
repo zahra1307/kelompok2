@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address and Time</title>
+</head>
+<body>
+    <p id="ip-address">IP Address: </p>
+    <p id="hostname">Hostname: </p>
+    <p id="current-time">Current Time: </p>
+
+    <script>
+        // Function to get IP address
+        function getIPAddress() {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ip-address').textContent = 'IP Address: ' + data.ip;
+                });
+        }
+
+        // Function to get hostname
+        function getHostname() {
+            fetch('https://api.ipgeolocation.io/ipgeo?apiKey=YOUR_API_KEY')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('hostname').textContent = 'Hostname: ' + data.hostname;
+                });
+        }
+
+        // Function to get current time
+        function getCurrentTime() {
+            const now = new Date();
+            const formattedTime = now.toLocaleString();
+            document.getElementById('current-time').textContent = 'Current Time: ' + formattedTime;
+        }
+
+        // Call the functions
+        getIPAddress();
+        getHostname();
+        getCurrentTime();
+    </script>
+</body>
+</html>
