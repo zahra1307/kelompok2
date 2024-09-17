@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Sistem Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+        .info-box {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Informasi Sistem Sederhana</h1>
+
+    <div class="info-box">
+        <!-- Menampilkan Hostname -->
+        <p><strong>Hostname:</strong> localhost.localdomain</p>
+
+        <!-- Menampilkan IP Address -->
+        <p><strong>IP Address:</strong> 192.168.12.9</p>
+
+        <!-- Menampilkan Waktu Saat Ini -->
+        
+        
+    </head>
+    <body>
+
+    
+        <div class="info-box">
+            <!-- Menampilkan Waktu Saat Ini -->
+            <p><strong>Waktu Saat Ini:</strong> <span id="current-time"></span></p>
+        </div>
+    
+        <script>
+            function updateTime() {
+                const now = new Date();
+                const options = {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false,
+                    timeZoneName: 'short'
+                };
+                const timeString = now.toLocaleString('id-ID', options);
+                document.getElementById('current-time').textContent = timeString;
+            }
+    
+            // Memperbarui waktu setiap detik
+            setInterval(updateTime, 1000);
+    
+            // Panggil fungsi pertama kali untuk menampilkan waktu segera
+            updateTime();
+        </script>
+    </div>
+
+</body>
+</html>
